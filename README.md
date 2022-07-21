@@ -7,7 +7,7 @@ Start developing by
 2. start the server `yarn dev`
 
 When finished run
-* `sudo docker-compose -f docker-compose.yml up`
+* `sudo docker-compose -f docker-compose.yml down`
 
 Next create session
 https://youtu.be/BWUi6BS9T5Y?t=3209
