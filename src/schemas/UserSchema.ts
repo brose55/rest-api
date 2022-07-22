@@ -8,7 +8,7 @@ export const createUserSchema = object({
     ).min(8, 'password must be at least 8 characters'),
     passwordConfirmation: string({required_error: 'passwordConfirmation is required'}),
     email:string(
-      {required_error: 'name is required'}
+      {required_error: 'email is required'}
     ).email('Not a valid email'),
   }).refine(data => data.password = data.passwordConfirmation, {
     message: 'passwords do not match',

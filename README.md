@@ -9,8 +9,8 @@ Start developing by
 When finished run
 * `sudo docker-compose -f docker-compose.yml down`
 
-Next create session
-https://youtu.be/BWUi6BS9T5Y?t=3209
+Next jwt
+https://youtu.be/BWUi6BS9T5Y?t=4208
 
 # src/
 * app.ts - basically just the listen call
