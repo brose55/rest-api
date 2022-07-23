@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import ISessionModel from "../interfaces/ISessionModel"
 
 // basic created session schema
 const sessionSchema = new mongoose.Schema({
@@ -18,6 +19,6 @@ const sessionSchema = new mongoose.Schema({
 })
 
 // our actual Session Model
-const SessionModel = mongoose.model("Session", sessionSchema)
+const SessionModel = mongoose.model<ISessionModel>("Session", sessionSchema)
 
 export default SessionModel
