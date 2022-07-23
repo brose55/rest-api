@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken'
 import config from 'config'
 
+const privateKey = config.get<string>('privateKey')
 const publicKey = config.get<string>('publicKey')
-const privateKey = config.get<string>('privateKey');
 
 export function signJwt(
   object: Object,
@@ -21,7 +21,7 @@ export function verifyJwt(token: string) {
     return {
       valid: true,
       expired: false,
-      decoded
+      decoded: decoded
     };
     
   } catch (err: any) {
