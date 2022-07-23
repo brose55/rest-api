@@ -4,13 +4,11 @@
   "main": "index.js",
   "author": "Brandon Rose",
   "license": "ISC",
-
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/app.ts",
     "db": "sudo docker-compose -f docker-compose.yml up",
     "clean": "sudo docker-compose -f docker-compose.yml down"
   },
-
   "packageManager": "yarn@3.2.0",
   "dependencies": {
     "bcrypt": "^5.0.1",
