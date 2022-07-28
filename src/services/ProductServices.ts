@@ -9,7 +9,7 @@ import IProductModel from "../interfaces/IProductModel";
 import ProductModel from "../models/ProductModel";
 
 export async function createProduct(
-	input: DocumentDefinition<Omit<IProductModel, "createdAt" | "updatedAt">>
+	input: DocumentDefinition<Omit<IProductModel, "createdAt" | "updatedAt" | "productId">>
 ) {
 	return ProductModel.create(input);
 }

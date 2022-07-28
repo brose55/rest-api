@@ -18,13 +18,21 @@ const router = Router();
 
 router
 	.route("/")
-  .post([requireUser, validateResource(createProductSchema)], createProductHandler)
-  
-  router
-  .route("/:productId")
-  .get(validateResource(getProductSchema), getProductHandler)
-	.put([requireUser, validateResource(updateProductSchema)], updateProductHandler)
-  .delete([requireUser, validateResource(deleteProductSchema)], deleteProductHandler);
+	.post(
+		[requireUser, validateResource(createProductSchema)],
+		createProductHandler
+	);
 
+router
+	.route("/:productId")
+	.get(validateResource(getProductSchema), getProductHandler)
+	.put(
+		[requireUser, validateResource(updateProductSchema)],
+		updateProductHandler
+	)
+	.delete(
+		[requireUser, validateResource(deleteProductSchema)],
+		deleteProductHandler
+	);
 
 export default router;
