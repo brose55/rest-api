@@ -26,7 +26,30 @@ export async function createUserSessionHandler(req: Request, res: Response) {
 		{ expiresIn: config.get("refreshTokenTtl") }
 	);
 
+  const domain = config.get('domain')
+  const accessAge = config.get('accessTokenCookieTtl')
+  const refreshAge = config.get('refreshTokenCookieTtl')
   // return both tokens
+  res.cookie("accessToken", accessToken, {
+		maxAge: config.get("accessTokenCookieTtl"),
+		httpOnly: true,
+		domain: config.get("domain"),
+		path: "/",
+		sameSite: "strict",
+		// TODO: set to true in production
+		secure: false,
+	});
+
+  res.cookie("refreshToken", refreshToken, {
+		maxAge: config.get("refreshTokenCookieTtl"),
+		httpOnly: true,
+		domain: config.get("domain"),
+		path: "/",
+		sameSite: "strict",
+		// TODO: set to true in production
+		secure: false,
+	});
+
   return res.send({accessToken, refreshToken})
 }
 
