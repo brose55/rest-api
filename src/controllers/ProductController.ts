@@ -26,7 +26,7 @@ export async function createProductHandler(
 		return res.send(product);
 	} catch (err) {
 		logger.error(err);
-		return res.sendStatus(409).send(err);
+		return res.status(409).send(err);
 	}
 }
 
@@ -36,9 +36,9 @@ export async function getProductHandler(
 ) {
 	const productId = req.params.productId;
 	const product = await findProduct({ productId });
-
+	
 	if (!product) {
-		return res.status(404);
+		return res.sendStatus(404);
 	}
 
 	return res.send(product);

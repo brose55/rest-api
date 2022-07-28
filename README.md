@@ -9,8 +9,8 @@ Start developing by
 When finished run
 * `sudo docker-compose -f docker-compose.yml down`
 
-Next jwt
-https://youtu.be/BWUi6BS9T5Y?t=4208
+Next testing other routes
+18:30
 
 # src/
 * app.ts - basically just the listen call
