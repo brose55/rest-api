@@ -6,6 +6,9 @@ import { omit } from "lodash";
 
 // takes request and calls create user service
 export async function createUserHandler(
+  // hover over Request to see the interface 
+  // there are no params or response body, so leave them as empty objects
+  // for the request body, use the CreateUserInput type but only grab the body
     req: Request<{}, {}, CreateUserInput["body"]>, 
     res: Response
   ) {
@@ -14,6 +17,7 @@ export async function createUserHandler(
       return res.send(omit(user, ['password']))
     } catch (err: any) {
       logger.error(err)
+      // conflict
       res.status(409).send(err)
     }
 }

@@ -2,7 +2,7 @@ import { AnyZodObject } from "zod";
 import { Request, Response, NextFunction } from 'express'
 import logger from "../utils/logger";
 
-// when a req comes in we will validate the req against the schema
+// when a req comes in we will validate the req against the schemas in ../schemas
 const validateResource = (schema: AnyZodObject) => (req:Request, res:Response, next:NextFunction) => {
   try {
     schema.parse({

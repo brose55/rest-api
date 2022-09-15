@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt'
 import config from 'config'
 import IUserModel from "../interfaces/IUserModel"
 
-// basic created user schema
+// basic create user schema definition
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -22,12 +22,13 @@ const userSchema = new mongoose.Schema({
     required: true
   }
 }, {
+  // this gives createdAt and updatedAt timestamps
   timestamps: true
 })
 
 // before save, encrypt the password
 userSchema.pre("save",async function(next) {
-  // avoiding using this directly
+  // avoiding using 'this' directly
   let user = this as IUserModel
   if (!user.isModified) {
     return next()

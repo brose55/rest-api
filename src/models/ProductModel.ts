@@ -1,4 +1,5 @@
 import mongoose from "mongoose"
+import IProductModel from "../interfaces/IProductModel";
 import idGen from "../utils/id_gen";
 
 
@@ -39,6 +40,6 @@ const productSchema = new mongoose.Schema(
 );
 
 // our actual Product Model
-const ProductModel = mongoose.model  ("Product", productSchema)
+const ProductModel = mongoose.model<IProductModel>("Product", productSchema)
 
 export default ProductModel
